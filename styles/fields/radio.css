@@ -4,11 +4,11 @@ label + .radio-wrapper {
 
 .radio-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax (7.5rem, 5rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(7.5rem, 5rem, 1fr));
 }
 
 .radio-inner {
-  border: 1px solid var (--stroke-default);
+  border: 1px solid var(--stroke-default);
   border-radius: .5rem;
   gap: 1rem;
 
@@ -36,5 +36,21 @@ label + .radio-wrapper {
     position: absolute;
     top: .5rem;
     left: .5rem;
+  }
+
+  &:hover, &:focus-within {
+    border: 1px solid var(--stroke-highlight);
+
+    &.radio-image {
+      background-image: url(../../assets/Icons_Illustratitions/radio-hover.svg);
+    }
+  }
+
+  &:has(:checked) {
+    border: 2px solid var(--stroke-highlight);
+
+    & .radio-image {
+      background-image: url(../../assets/Icons_Illustratitions/radio-checked.svg);
+    }
   }
 }
